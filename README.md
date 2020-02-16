@@ -1,14 +1,28 @@
-# AlchemyCP
+# 🍷 AlchemyCP
 
 A webapp for managing ragnarok online accounts for rAthena built on Django
 
+## 📸 Screenshots
 
-## Installation
+![AlchemyCP Screenshot](docs/demo.png)
+
+## ⚙ Installation
 
 ```bash
-$_> pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-## This is a work in progress!
+## 🧀 Usage
+
+```bash
+# Prepare Migrations
+python manage.py makemigrations account
+python manage.py migrate account
+
+# Run the server 
+python manage.py runserver
+```
+
+## ⚠ This is a work in progress!
 
 Please use at your own risk!
