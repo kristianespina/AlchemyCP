@@ -9,13 +9,14 @@
             <div id="dialog">
                 <div class="dialog-image"></div>
                 <div class="dialog-title">
-                    <h1>Create an account</h1>
-                    <p>Join us in our journey in Rune Midgard!</p>
+                    <h1>Manage your account</h1>
+                    <p>Login through our control panel</p>
                 </div>
                 <form class="dialog-form" method="post">
                         {% csrf_token %}
                         {{form}}
-                        <button type="submit">Sign up</button>
+                        <button type="submit">Login</button>
+                        <p>Don't have an account? Create an account instead</p>
                 </form>
             </div>
         </div>
