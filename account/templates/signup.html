@@ -1,0 +1,32 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="AlchemyCP: A web-based control panel for rAthena">
+        <title>AlchemyCP</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <div id="content">
+            <div id="header">
+                <div id="promo">
+                    <!-- 376x818 -->
+                </div>
+                <div id="dialog">
+                    <div class="dialog-image"></div>
+                    <div class="dialog-title">
+                        <h1>Create an account</h1>
+                        <p>Join us in our journey in Rune Midgard!</p>
+                    </div>
+                    <form class="dialog-form" method="post">
+                            {% csrf_token %}
+                            {{form}}
+                            <button type="submit">Sign up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

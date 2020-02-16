@@ -1,0 +1,127 @@
+body, html {
+  background: url("background.png");
+  min-height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+#content {
+  height: 960px;
+  display: -ms-grid;
+  display: grid;
+}
+
+#header {
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 75px;
+  -ms-grid-columns: 376px auto;
+      grid-template-columns: 376px auto;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+      grid-template-areas: 'promo dialog';
+}
+
+#promo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: promo;
+  background: url("promo.png");
+  width: 376px;
+  height: 818px;
+}
+
+#dialog {
+  display: block;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: dialog;
+  width: 627px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 25px rgba(162, 177, 200, 0.35);
+          box-shadow: 0px 0px 25px rgba(162, 177, 200, 0.35);
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  padding-left: 44px;
+  padding-right: 44px;
+  padding: 36px 44px 36px 44px;
+}
+
+#dialog .dialog-image {
+  width: 75px;
+  height: 100px;
+  background: url("book.png");
+  float: left;
+  margin-right: 30px;
+}
+
+#dialog .dialog-title {
+  display: inline-block;
+  margin-top: 9px;
+}
+
+#dialog .dialog-title h1 {
+  font-size: 36px;
+  font-weight: 500;
+  margin: 0;
+}
+
+#dialog .dialog-title p {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0;
+}
+
+#dialog .dialog-form {
+  clear: left;
+  padding-top: 23px;
+}
+
+#dialog .dialog-form label {
+  display: block;
+  margin-top: 30px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+#dialog .dialog-form input, #dialog .dialog-form select {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #ECEFF4;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 40px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  line-height: 30px;
+  padding: 10px;
+}
+
+#dialog .dialog-form br {
+  display: none;
+}
+
+#dialog .dialog-form .helptext {
+  display: none;
+}
+
+#dialog .dialog-form button {
+  display: block;
+  background: #FAB005;
+  width: 100%;
+  height: 62px;
+  margin-top: 30px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
