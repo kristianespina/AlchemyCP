@@ -1,3 +1,9 @@
+/*
+    Configuration
+*/
+$color-bg: #343A40;
+$color-gray: #ECEFF4;
+$content-width: 1280px;
 // Grid Visual Cheatsheet
 // http://grid.malven.co/
 
@@ -5,7 +11,45 @@ body,html {
     background: url('background.png');
     min-height: 100%;
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
+/*
+    Helper CSS
+*/
+a.no-decoration {
+    text-decoration: none;
+}
+/*
+    Header
+*/
+header#topbar {
+    height: 60px;
+    background: $color-bg;
+    display: grid;
+    .content {
+        width: $content-width;
+        margin: auto;
+        color: white;
+        .logo {
+            float: left;
+        }
+        .menu {
+            float: right;
+            a {
+                text-decoration: none;
+                color: white;
+            }
+            a.ml-1 {
+                margin-left: 36px;
+            }
+        }
+    }
+}
+
+/*
+    Content
+*/
 #content {
     height: 960px;
     display: grid;
@@ -44,13 +88,17 @@ body,html {
     .dialog-image {
         width: 75px;
         height: 100px;
-        background: url('book.png');
+        //background: url('book.png');
         float: left;
         margin-right: 30px;
+        img {
+            max-height: 100px;
+        }
     }
     .dialog-title {
         display: inline-block;
-        margin-top: 9px;
+        margin-top: 14px;
+        padding-left: 12px;
         h1 {
             font-size: 36px;
             font-weight: 500;
@@ -89,7 +137,7 @@ body,html {
         .helptext {
             display: none;
         }
-        button {
+        button,.btn {
             //width: 540px;
             display: block;
             background: #FAB005;
@@ -101,9 +149,15 @@ body,html {
             border: none;
             border-radius: 10px;
 
-            font-size: 24px;
+            font-size: 16px;
             font-weight: 500;
             color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            &.bg-gray {
+                background: $color-gray;
+                color: black;
+            }
         }
     }
 }
@@ -119,4 +173,60 @@ body,html {
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
+}
+
+/*
+    Footer
+*/
+footer#footer {
+    height: 292px;
+    background: $color-bg;
+    display: grid;
+    .content {
+        width: $content-width;
+        margin: auto;
+        color: white;
+        display: grid;
+        grid-template-columns: auto 20%;
+        grid-template-rows: auto;
+        .logo {
+            .logo-img {
+                height: 122px;
+                width: 122px;
+                background: url('logo.svg') no-repeat;
+                float: left;
+                margin-right: 24px;
+            }
+            .logo-text {
+                p {
+                    margin: 0;
+                }
+                .headline {
+                    font-size: 36px;
+                    margin-bottom: 12px;
+                }
+                .caption {
+                    font-size: 14px;
+                    line-height: 150%;
+                }
+            }
+        }
+        .links {
+            p {
+                margin: 0;
+            }
+            .headline {
+                font-size: 36px;
+                margin-bottom: 12px;
+            }
+            .caption {
+                font-size: 14px;
+                line-height: 150%;
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+    }
 }

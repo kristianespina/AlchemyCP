@@ -1,9 +1,57 @@
+/*
+    Configuration
+*/
 body, html {
   background: url("background.png");
   min-height: 100%;
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
+/*
+    Helper CSS
+*/
+a.no-decoration {
+  text-decoration: none;
+}
+
+/*
+    Header
+*/
+header#topbar {
+  height: 60px;
+  background: #343A40;
+  display: -ms-grid;
+  display: grid;
+}
+
+header#topbar .content {
+  width: 1280px;
+  margin: auto;
+  color: white;
+}
+
+header#topbar .content .logo {
+  float: left;
+}
+
+header#topbar .content .menu {
+  float: right;
+}
+
+header#topbar .content .menu a {
+  text-decoration: none;
+  color: white;
+}
+
+header#topbar .content .menu a.ml-1 {
+  margin-left: 36px;
+}
+
+/*
+    Content
+*/
 #content {
   height: 960px;
   display: -ms-grid;
@@ -53,14 +101,18 @@ body, html {
 #dialog .dialog-image {
   width: 75px;
   height: 100px;
-  background: url("book.png");
   float: left;
   margin-right: 30px;
 }
 
+#dialog .dialog-image img {
+  max-height: 100px;
+}
+
 #dialog .dialog-title {
   display: inline-block;
-  margin-top: 9px;
+  margin-top: 14px;
+  padding-left: 12px;
 }
 
 #dialog .dialog-title h1 {
@@ -110,7 +162,7 @@ body, html {
   display: none;
 }
 
-#dialog .dialog-form button {
+#dialog .dialog-form button, #dialog .dialog-form .btn {
   display: block;
   background: #FAB005;
   width: 100%;
@@ -120,9 +172,16 @@ body, html {
           box-shadow: none;
   border: none;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 500;
   color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+#dialog .dialog-form button.bg-gray, #dialog .dialog-form .btn.bg-gray {
+  background: #ECEFF4;
+  color: black;
 }
 
 /* Copied from bootstrap alerts */
@@ -135,5 +194,68 @@ body, html {
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb;
+}
+
+/*
+    Footer
+*/
+footer#footer {
+  height: 292px;
+  background: #343A40;
+  display: -ms-grid;
+  display: grid;
+}
+
+footer#footer .content {
+  width: 1280px;
+  margin: auto;
+  color: white;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 20%;
+      grid-template-columns: auto 20%;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+}
+
+footer#footer .content .logo .logo-img {
+  height: 122px;
+  width: 122px;
+  background: url("logo.svg") no-repeat;
+  float: left;
+  margin-right: 24px;
+}
+
+footer#footer .content .logo .logo-text p {
+  margin: 0;
+}
+
+footer#footer .content .logo .logo-text .headline {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+footer#footer .content .logo .logo-text .caption {
+  font-size: 14px;
+  line-height: 150%;
+}
+
+footer#footer .content .links p {
+  margin: 0;
+}
+
+footer#footer .content .links .headline {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+footer#footer .content .links .caption {
+  font-size: 14px;
+  line-height: 150%;
+}
+
+footer#footer .content .links .caption a {
+  text-decoration: none;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */
