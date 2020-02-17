@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <body>
     <div id="content">
@@ -6,16 +7,45 @@
             <div id="promo">
                 <!-- 376x818 -->
             </div>
-            <div id="dialog">
-                <div class="dialog-image"></div>
-                <div class="dialog-title">
-                    <h1>Manage your account</h1>
-                    <p>Welcome to our control panel</p>
-                </div>
-                <div class="dialog-form">
-                    {% csrf_token %}
-                    You are currently logged in as:
-                    <span style="font-weight: bold">{{ user }}</span>
+            <div id="promo-box">
+                <div id="dialog">
+                    <div class="dialog-image">
+                        {% if user.is_authenticated %}
+                        <img src="{% static 'crystal.svg' %}" />
+                        {% else %}
+                        <img src="{% static 'warning.svg' %}" />
+                        {% endif %}
+                    </div>
+                    <div class="dialog-title">
+                        {% if user.is_authenticated %}
+                        <h1>Manage your account</h1>
+                        <p>Welcome to our control panel</p>
+                        {% else %}
+                        <h1>Oops! That didn't work</h1>
+                        <p>Please login to continue</p>
+                        {% endif %}
+                    </div>
+                    <div class="dialog-form">
+                        {% csrf_token %}
+                        {% if user.is_authenticated %}
+                        You are currently logged in as:
+                        <span style="font-weight: bold">{{ user }}</span>
+                        <a href="{% url 'change-pass' %}" class="no-decoration">
+                            <input type="button" class="btn bg-gray" value="CHANGE PASSWORD" />
+                        </a>
+                        <!--
+                            Not implemented yet
+                            <a href="#" class="no-decoration">
+                                <input type="button" class="btn bg-gray" value="CHANGE EMAIL" />
+                            </a>
+                        -->
+                        <a href="{% url 'logout' %}" class="no-decoration">
+                            <input type="button" class="btn bg-orange" value="LOG OUT" />
+                        </a>
+                        {% else %}
+                        <a href="../login">Login Here</a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>

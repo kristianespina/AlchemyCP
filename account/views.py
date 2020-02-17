@@ -1,15 +1,22 @@
 from django.shortcuts import render
 
 #from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 
 from .forms import SignUpForm, SignInForm
 from django.shortcuts import render, redirect
 
-def home(request):
-    return render(request, 'index.html')
+def home_view(request):
+    if request.user.is_authenticated:
+        print(request.user.is_authenticated)
+        return redirect('/accounts/profile')
+    return redirect('/accounts/login')#signup(request)
 
-def signup(request):
+def signup_view(request):
+    if request.user.is_authenticated:
+        print(request.user.is_authenticated)
+        return redirect('/accounts/profile')
+
     form = SignUpForm(request.POST)
     if form.is_valid():
         # Create and save database object from the data bound to the form
@@ -20,6 +27,15 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
 
+def profile_view(request):
+    return render(request, 'profile.html')
+
+def success_view(request):
+    return render(request, 'success.html')
+
+def logout_view(request):
+    logout(request)
+    return redirect('/accounts/login')
 """
 def signin(request):
     login_form = SignInForm(request.POST)
@@ -36,8 +52,3 @@ def signin(request):
     print(login_form.is_valid())
     return render(request, 'login.html', {'form': login_form}) 
 """
-def profile(request):
-    return render(request, 'profile.html')
-
-def success(request):
-    return render(request, 'success.html')

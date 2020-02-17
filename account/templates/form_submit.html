@@ -12,20 +12,17 @@
                     <div class="dialog-image">
                         <img src="{% static 'book.png' %}" />
                     </div>
+                    
                     <div class="dialog-title">
                         <h1>Manage your account</h1>
-                        <p>Login through our control panel</p>
+                        <p>Welcome to our control panel</p>
                     </div>
                     <form class="dialog-form" method="post">
-                            {% csrf_token %}
-                            {{form}}
-                            <button type="submit">Login</button>
-                            <p>
-                                Don't have an account? 
-                                <a href="../signup">
-                                Create an account instead
-                                </a>
-                            </p>
+                        {% csrf_token %}
+                        You are currently logged in as:
+                        <span style="font-weight: bold">{{ user }}</span>
+                        {{form}}
+                        <button type="submit">Submit</button>
                     </form>
                 </div>
             </div>

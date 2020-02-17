@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <body>
     <div id="content">
@@ -6,17 +7,21 @@
             <div id="promo">
                 <!-- 376x818 -->
             </div>
-            <div id="dialog">
-                <div class="dialog-image"></div>
-                <div class="dialog-title">
-                    <h1>Create an account</h1>
-                    <p>Join us in our journey in Rune Midgard!</p>
+            <div id="promo-box">
+                <div id="dialog">
+                    <div class="dialog-image">
+                        <img src="{% static 'book.png' %}" />
+                    </div>
+                    <div class="dialog-title">
+                        <h1>Create an account</h1>
+                        <p>Join us in our journey in Rune Midgard!</p>
+                    </div>
+                    <form class="dialog-form" method="post">
+                            {% csrf_token %}
+                            {{form}}
+                            <button type="submit">Sign up</button>
+                    </form>
                 </div>
-                <form class="dialog-form" method="post">
-                        {% csrf_token %}
-                        {{form}}
-                        <button type="submit">Sign up</button>
-                </form>
             </div>
         </div>
     </div>

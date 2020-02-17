@@ -9,7 +9,47 @@
         <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     </head>
     <body>
+        <header id="topbar">
+            <div class="content">
+                <div class="logo">AlchemyCP</div>
+                <div class="menu">
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="#" class="ml-1">Forums</a>
+                    <a href="#" class="ml-1">Facebook Page</a>
+                    <a href="#" class="ml-1">Vote for Points</a>
+                </div>
+            </div>
+        </header>
         {% block content %}
         {% endblock %}
+        <footer id="footer">
+            <div class="content">
+                <div class="logo">
+                    <div class="logo-img">
+                        <!-- 122px x 122px logo here-->
+                    </div>
+                    <div class="logo-text">
+                        <p class="headline">AlchemyCP</p>
+                        <p class="caption">
+                            A webapp for managing ragnarok online accounts for rAthena built on Django. 
+                            Please do note that this webapp is currently a work in progress. Use at your own risk. 
+                            For comments/suggestions, please drop by the github repository (https://github.com/kristianespina/AlchemyCP)
+                        </p>
+                    </div>
+                </div>
+                <div class="links">
+                    <p class="headline">Useful Links</p>
+                    <p class="caption">
+                        <a href="#">GitHub Repository</a>
+                    </p>
+                    <p class="caption">
+                        <a href="#">rAthena</a>
+                    </p>
+                    <p class="caption">
+                        <a href="#">Django Project</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
